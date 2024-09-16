@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-/* Body and General Styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -12,7 +11,6 @@ body {
     line-height: 1.6;
 }
 
-/* Header and Navigation */
 header {
     background-color: #004d99;
     color: white;
@@ -47,7 +45,6 @@ header .logo h1 {
     color: #ffcc00;
 }
 
-/* Hero Section */
 .hero {
     background-color: #0066cc;
     color: white;
@@ -64,7 +61,6 @@ header .logo h1 {
     font-size: 1.25rem;
 }
 
-/* Form Section */
 .form-section {
     background-color: white;
     padding: 2rem;
@@ -119,7 +115,6 @@ header .logo h1 {
     background-color: #003366;
 }
 
-/* Footer */
 footer {
     background-color: #004d99;
     color: white;
@@ -128,4 +123,23 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .form-section {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .form-group input, .form-group button {
+    font-size: 1rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
 }
