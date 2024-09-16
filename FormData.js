@@ -12,4 +12,24 @@ export default class FormData {
         this.numBathrooms = numBathrooms;
         this.yearBuilt = yearBuilt;
     }
+
+    getAddress() {
+        return this.address;
+    }
+
+    getPropertySqft() {
+        return this.propertySqft;
+    }
+
+    getNumBedrooms() {
+        return this.numBedrooms;
+    }
+
+    getNumBathrooms() {
+        return this.numBathrooms;
+    }
+
+    getYearBuilt() {
+        return this.yearBuilt;
+    }
 }

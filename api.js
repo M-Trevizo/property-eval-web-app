@@ -1,5 +1,3 @@
-const API_URL = 'api.somesite.com/data'; // Some api url
-
 export default class API {
 
     // Fetch some data from the API
