@@ -8,53 +8,61 @@
 </head>
 <body>
     <header>
-            <nav>
+        <nav>
             <div class="logo">
-            <h1>Property Evaluation</h1>
+                <h1>Property Evaluation</h1>
             </div>
             <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
-            </nav>
+        </nav>
     </header>
 
     <main>
         <section class="hero">
-        <h2>Get Accurate Property Valuations</h2>
-        <p>Instant, reliable, and up-to-date property evaluations for homeowners, real estate agents, and investors.</p>
+            <h2>Get Accurate Property Valuations</h2>
+            <p>Instant, reliable, and up-to-date property evaluations for homeowners, real estate agents, and investors.</p>
         </section>
 
         <section class="form-section">
             <h3>Property Valuation Form</h3>
             <form id="property-evaluation-form">
-            <div class="form-group">
-            <label for="address">Property Address:</label>
-            <input type="text" id="address" name="address" placeholder="Enter property address" required>
+                <div class="form-group">
+                    <label for="address">Property Address:</label>
+                    <input type="text" id="address" name="address" placeholder="Enter property address" required>
                 </div>
 
                 <div class="form-group">
-                <label for="size">Property Size (sqft):</label>
-                <input type="number" id="size" name="size" placeholder="Enter property size" required>
+                    <label for="size">Property Size (Square Feet):</label>
+                    <input type="number" id="size" name="size" placeholder="Enter property size" min="1" required>
                 </div>
 
                 <div class="form-group">
-                <label for="bedrooms">Number of Bedrooms:</label>
-                <input type="number" id="bedrooms" name="bedrooms" placeholder="Enter number of bedrooms" required>
+                    <label for="bedrooms">Number of Bedrooms:</label>
+                    <input type="number" id="bedrooms" name="bedrooms" placeholder="Enter number of bedrooms" min="0" required>
                 </div>
 
                 <div class="form-group">
-                <label for="bathrooms">Number of Bathrooms:</label>
-                <input type="number" id="bathrooms" name="bathrooms" placeholder="Enter number of bathrooms" required>
+                    <label for="bathrooms">Number of Bathrooms:</label>
+                    <input type="number" id="bathrooms" name="bathrooms" placeholder="Enter number of bathrooms" min="0" required>
                 </div>
 
                 <div class="form-group">
-                <label for="year-built">Year Built:</label>
-                <input type="number" id="year-built" name="year-built" placeholder="Enter year built" required>
-        </div>
-        </form>
+                    <label for="year-built">Year Built:</label>
+                    <input type="number" id="year-built" name="year-built" placeholder="Enter year built" min="1500" max="2024">
+                </div>
+
+                <button id="submitButton">Submit</button>
+                <button id="clearButton">Clear</button>
+            </form>
+
+            <div id="result"></div>
+            <div id="loading" style="display:none;">Loading...</div>
         </section>
-        </main>
+    </main>
+
+    <script type="module" src="index.js"></script>
 </body>
 </html>
