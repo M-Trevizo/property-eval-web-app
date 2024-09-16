@@ -1,4 +1,5 @@
 import API from './api.js';
+import FormData from './FormData';
 
 const apiBaseUrl = `${window.location.origin}/property-eval-web-app-main/api`;
 console.log(`API Base URL: ${apiBaseUrl}`);
@@ -49,13 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       displaySubscriptionMessage();
 
-      const formData = {
-        address,
-        size,
-        bedrooms,
-        bathrooms,
-        yearBuilt
-      };
+      const formData = new FormData(
+          address,
+          size,
+          bedrooms,
+          bathrooms,
+          yearBuilt
+      );
 
       await api.evaluateProperty(formData);
 
