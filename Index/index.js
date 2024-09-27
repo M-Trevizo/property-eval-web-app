@@ -1,5 +1,5 @@
-import API from './api.js';
-import FormData from './FormData';
+import API from '../API/api.js';
+import FormData from '../FormData';
 
 const apiBaseUrl = `${window.location.origin}/property-eval-web-app-main/api`;
 console.log(`API Base URL: ${apiBaseUrl}`);

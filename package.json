@@ -2,7 +2,7 @@
   "name": "property-eval-web-app",
   "version": "1.0.0",
   "description": "A web application for property evaluation using Square Feet, bedrooms, and other data.",
-  "main": "index.js",
+  "main": "Index/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
