@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       displaySubscriptionMessage();
 
-      const formData = new FormData(
+       const formData = new FormData(
           address,
           size,
           bedrooms,
@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } finally {
       loadingElement.style.display = 'none';
     }
+    window.location.href = `${window.location.origin}/Report/report.html`;
   };
 
   const calculatePropertyValue = (size, bedrooms, bathrooms, yearBuilt) => {
