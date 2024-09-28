@@ -50,5 +50,12 @@
       "value": "459403",
       "id": "890d"
     }
-  ]
+  ],
+  "formData": {
+    "address": "123 Some Street",
+    "propertySqft": "2400",
+    "numBedrooms": "2",
+    "numBathrooms": "2",
+    "yearBuilt": "1985"
+  }
 }
