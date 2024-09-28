@@ -1,0 +1,61 @@
+{
+  "homes": [
+    {
+      "zipCode": "92014",
+      "value": "1799468",
+      "id": "c81a"
+    },
+    {
+      "zipCode": "92025",
+      "value": "559422",
+      "id": "7f2d"
+    },
+    {
+      "zipCode": "92027",
+      "value": "500422",
+      "id": "0ec0"
+    },
+    {
+      "zipCode": "92037",
+      "value": "1620182",
+      "id": "4451"
+    },
+    {
+      "zipCode": "92071",
+      "value": "515617",
+      "id": "962c"
+    },
+    {
+      "zipCode": "92101",
+      "value": "629436",
+      "id": "bff5"
+    },
+    {
+      "zipCode": "92102",
+      "value": "475665",
+      "id": "b8a7"
+    },
+    {
+      "zipCode": "92103",
+      "value": "833746",
+      "id": "84d9"
+    },
+    {
+      "zipCode": "92104",
+      "value": "681764",
+      "id": "0972"
+    },
+    {
+      "zipCode": "92105",
+      "value": "459403",
+      "id": "890d"
+    }
+  ],
+  "formData": {
+    "address": "123 Some Street",
+    "propertySqft": "2400",
+    "numBedrooms": "2",
+    "numBathrooms": "2",
+    "yearBuilt": "1985"
+  }
+}
