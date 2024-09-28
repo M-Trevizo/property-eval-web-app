@@ -1,3 +1,9 @@
+import API from "../API/api.js"
+
+const apiBaseUrl = `http://localhost:3000`;
+const api = new API(apiBaseUrl);
+
+
 export default class FinalReport {
     estimate;
 
@@ -7,5 +13,9 @@ export default class FinalReport {
 
     getEstimate() {
         return this.estimate;
+    }
+
+    async getFormData() {
+        return await api.getFormData();
     }
 }
