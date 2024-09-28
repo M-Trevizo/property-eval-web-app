@@ -24,9 +24,6 @@ const handleSubmit = async (event) => {
   try {
     loadingElement.style.display = 'block';
 
-    //const estimatedValue = calculatePropertyValue(size, bedrooms, bathrooms, yearBuilt);
-    //console.log('Estimated Property Value: $', estimatedValue);
-
     displaySubscriptionMessage();
 
     getFormData();
