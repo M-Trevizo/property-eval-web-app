@@ -3,7 +3,7 @@ export default class API {
       this.baseUrl = baseUrl;
     }
   
-    async evaluateProperty(data) {
+    async evaluateProperty() {
       try {
         const response = await fetch(`${this.baseUrl}/homes`, {
           method: 'GET'
@@ -25,6 +25,38 @@ export default class API {
       }
     }
 
+    async postFormData(data) {
+        try {
+            const response = await fetch(`${this.baseUrl}/formData`, {
+                method: 'PUT',
+                contentType: 'application/json',
+                body: JSON.stringify(data)
+            });
+            if (response.ok) {
+                const json = await response.json();
+                console.log(json);
+            }
+        }
+        catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    async getFormData() {
+        try {
+            const response = await fetch(`${this.baseUrl}/formData`, {
+                method: 'GET',
+            });
+            if (response.ok) {
+                const data = await response.json();
+                return data;
+            }
+        }
+        catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
     // Parse the values returned from our fake API
     getValues(homeData) {
       const values = [];
@@ -43,6 +75,6 @@ export default class API {
         sum += value;
         count++;
       }
-      return sum / count;
+      return Math.round(sum / count);
     }
 }
