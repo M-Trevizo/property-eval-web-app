@@ -16,9 +16,36 @@ const valuePerBathroom = 30000;
 const minYear = 1500;
 const maxYear = 2024;
 
+const formData = new FormData();
+
 const handleSubmit = async (event) => {
   event.preventDefault();
 
+  try {
+    loadingElement.style.display = 'block';
+
+    //const estimatedValue = calculatePropertyValue(size, bedrooms, bathrooms, yearBuilt);
+    //console.log('Estimated Property Value: $', estimatedValue);
+
+    displaySubscriptionMessage();
+
+    getFormData();
+
+    await api.postFormData(formData);
+    const estimate = await api.evaluateProperty();
+    console.log(estimate);
+
+    alert('Property value calculated successfully');
+  } catch (error) {
+    console.error('Failed to calculate property value:', error);
+    alert('Thank you, Property value calculated successfully.');
+  } finally {
+    loadingElement.style.display = 'none';
+  }
+  window.location.href = `${window.location.origin}/Report/report.html`;
+};
+
+const getFormData = () => {
   const address = document.getElementById('address').value;
   const size = document.getElementById('size').value;
   const bedrooms = document.getElementById('bedrooms').value;
@@ -42,34 +69,12 @@ const handleSubmit = async (event) => {
     return;
   }
 
-  try {
-    loadingElement.style.display = 'block';
-
-    const estimatedValue = calculatePropertyValue(size, bedrooms, bathrooms, yearBuilt);
-    console.log('Estimated Property Value: $', estimatedValue);
-
-    displaySubscriptionMessage();
-
-    const formData = new FormData(
-      address,
-      size,
-      bedrooms,
-      bathrooms,
-      yearBuilt
-    );
-
-    const estimate = await api.evaluateProperty(formData);
-    console.log(estimate);
-
-    alert('Property value calculated successfully');
-  } catch (error) {
-    console.error('Failed to calculate property value:', error);
-    alert('Thank you, Property value calculated successfully.');
-  } finally {
-    loadingElement.style.display = 'none';
-  }
-  window.location.href = `${window.location.origin}/Report/report.html`;
-};
+  formData.setAddress(address);
+  formData.setPropertySqft(size);
+  formData.setNumBedrooms(bedrooms);
+  formData.setNumBathrooms(bathrooms);
+  formData.setYearBuilt(yearBuilt)
+}
 
 const calculatePropertyValue = (size, bedrooms, bathrooms, yearBuilt) => {
   const pricePerSqft = getPricePerSquareFoot(yearBuilt);
