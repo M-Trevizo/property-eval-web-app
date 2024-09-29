@@ -33,13 +33,14 @@ const handleSubmit = async (event) => {
     console.log(estimate);
 
     alert('Property value calculated successfully');
+    window.location.href = `${window.location.origin}/Report/report.html`;
   } catch (error) {
     console.error('Failed to calculate property value:', error);
     alert('Thank you, Property value calculated successfully.');
   } finally {
     loadingElement.style.display = 'none';
   }
-  window.location.href = `${window.location.origin}/Report/report.html`;
+
 };
 
 const getFormData = () => {
@@ -51,19 +52,19 @@ const getFormData = () => {
 
   if (size <= 0) {
     alert('Property size must be a positive number.');
-    return;
+    throw new Error('Property Size must be a positive number.');
   }
   if (bedrooms < 0) {
     alert('Number of bedrooms cannot be negative.');
-    return;
+    throw new Error('Number of bedrooms cannot be negative.');
   }
   if (bathrooms < 0) {
     alert('Number of bathrooms cannot be negative.');
-    return;
+    throw new Error('Number of bathrooms cannot be negative.');
   }
   if (yearBuilt < minYear || yearBuilt > maxYear) {
     alert(`Year built must be between ${minYear} and ${maxYear}.`);
-    return;
+    throw new Error(`Year built must be between ${minYear} and ${maxYear}.`)
   }
 
   formData.setAddress(address);
